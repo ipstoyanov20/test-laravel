@@ -1,0 +1,33 @@
+{
+  "uid": "get_started_app",
+  "type": "app",
+  "config": {
+    "description": "Custom Contact Analytics - A private app that provides enhanced contact insights and analytics directly in HubSpot CRM",
+    "name": "Custom Contact Analytics App",
+    "distribution": "private",
+    "auth": {
+      "type": "static",
+      "requiredScopes": [
+        "crm.objects.contacts.read",
+        "crm.objects.contacts.write",
+        "crm.objects.companies.read",
+        "crm.objects.deals.read"
+      ],
+      "optionalScopes": [
+        "crm.schemas.contacts.read"
+      ],
+      "conditionallyRequiredScopes": []
+    },
+    "permittedUrls": {
+      "fetch": ["https://api.hubapi.com"],
+      "iframe": [],
+      "img": []
+    },
+    "support": {
+      "supportEmail": "support@yourcompany.com",
+      "documentationUrl": "https://yourcompany.com/docs",
+      "supportUrl": "https://yourcompany.com/support",
+      "supportPhone": "+18005555555"
+    }
+  }
+}

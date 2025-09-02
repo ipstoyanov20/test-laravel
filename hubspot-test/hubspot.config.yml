@@ -1,0 +1,27 @@
+defaultPortal: help-centerio
+portals:
+  - name: help-centerio
+    portalId: 146828994
+    env: prod
+    authType: personalaccesskey
+    auth:
+      tokenInfo:
+        accessToken: >-
+          CKawltyQMxIgQlNQMl8kQEwrAhMACAkCFBwBAgEQAwoBAgMHGygCeAEYwt2BRiDpssYnKO7pDDIUdFJveTzmojfepMVsetrhqQ5N4m46WEJTUDJfJEBMKwImABATBgAGAHEAKwBIAAEAAQABAAgAAQAGAAIAFAAEABgABAABAAEAAQABAAEABAABAAUAAQASAAkAAwABADEAAQBXABcAAQBCAFQBAQBCFIrB8RHAa1GmaAUVcdsoldxZ1qWISgNldTFSAFoAYAFo6bLGJ3AAeAA
+        expiresAt: '2025-09-02T17:42:08.724Z'
+    accountType: STANDARD
+    personalAccessKey: >-
+      CiRldTEtYmNlMy1kMWE5LTRhNjAtYTdhOC05Mjc4ODM5NWJlZmUQwt2BRhjpssYnKhkABeaRglPZ-tJ6OWRBz8-ASM97CcP8ZbC8SgNldTE
+  - name: testaccount1
+    portalId: 146831281
+    env: prod
+    authType: personalaccesskey
+    auth:
+      tokenInfo:
+        accessToken: >-
+          CO6Q3tuQMxInQlNQMl8kQEwrAhoACAkCEAQIDwEEAQIBEAMKAQIDBxALKAIcAVsBGLHvgUYg6bLGJyju6QwyFE27Fg90u_chtj7-DCL1ayV09rupOoQBQlNQMl8kQEwrAjwAEBMGAAYAaQAIABoAAQAQACsAAQADAAEAAQARAAYAAQABAAEACAABAAYAAgAUAAQAGAAEAAEAAQABAAEAAQAEAAEABQABABIACQADAAEACgABAAEAAQABAAEAAQABAAEAHwABAEUACgAIABcAAQBCABoAAQA5AQEAQhR2vW0ocagHIX7C6zlqCLgIjI5A1koDZXUxUgBaAGABaOmyxidwAHgA
+        expiresAt: '2025-09-02T17:26:47.196Z'
+    accountType: DEVELOPER_TEST
+    personalAccessKey: >-
+      CiRldTEtNGE2ZS03MTVmLTQzOGYtYjBiZS05Y2MzMDY1YTJlMzUQse-BRhjpssYnKhkABeaRgpKsaFKlJDH_y117-w7SMOo8e_iQSgNldTE
+    parentAccountId: 146828994

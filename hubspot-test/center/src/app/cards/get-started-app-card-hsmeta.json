@@ -1,0 +1,11 @@
+{
+  "uid": "get_started_app_card_private_static",
+  "type": "card",
+  "config": {
+    "name": "Custom Contact Analytics",
+    "description": "A custom private app card that displays enhanced contact analytics and quick stats.",
+    "entrypoint": "/app/cards/get-started-app-card.jsx",
+    "location": "crm.record.tab",
+    "objectTypes": [ "CONTACT" ]
+  }
+}

@@ -1,0 +1,27 @@
+
+defaultPortal: your-main-portal-name
+
+portals:
+  - name: your-main-portal-name
+    portalId: YOUR_PORTAL_ID_HERE  
+    env: prod
+    authType: personalaccesskey
+    auth:
+      tokenInfo:
+        accessToken: YOUR_ACCESS_TOKEN_HERE
+        expiresAt: 'TOKEN_EXPIRY_DATE_HERE'  
+    accountType: STANDARD
+    personalAccessKey: YOUR_PERSONAL_ACCESS_KEY_HERE
+  - name: sandbox-portal-name
+    portalId: YOUR_SANDBOX_PORTAL_ID_HERE  
+    env: sandbox
+    authType: personalaccesskey
+    auth:
+      tokenInfo:
+        accessToken: YOUR_SANDBOX_ACCESS_TOKEN_HERE
+        expiresAt: 'SANDBOX_TOKEN_EXPIRY_DATE_HERE'
+    accountType: DEVELOPER_TEST
+    personalAccessKey: YOUR_SANDBOX_PERSONAL_ACCESS_KEY_HERE
+    parentAccountId: YOUR_PARENT_ACCOUNT_ID_HERE  
+
+

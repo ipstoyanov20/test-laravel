@@ -139,8 +139,8 @@ const Extension = ({ context, runServerlessFunction }) => {
 			>
 				<MultiSelect
 					value={formValue}
-					placeholder="Избери"
-					label="Избери умения"
+					placeholder="Pick"
+					label="Choose skills"
 					name="selectProduct"
 					required={true}
 					onChange={(value) => setFormValue(value)}

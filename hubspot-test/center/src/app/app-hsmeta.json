@@ -2,8 +2,8 @@
   "uid": "get_started_app",
   "type": "app",
   "config": {
-    "description": "Custom Contact Analytics - A private app that provides enhanced contact insights and analytics directly in HubSpot CRM",
-    "name": "Custom Contact Analytics App",
+    "description": "Help Center integration directly in HubSpot CRM",
+    "name": "Test Project",
     "distribution": "private",
     "auth": {
       "type": "static",
@@ -11,7 +11,9 @@
         "crm.objects.contacts.read",
         "crm.objects.contacts.write",
         "crm.objects.companies.read",
-        "crm.objects.deals.read"
+        "crm.objects.deals.read",
+        "tickets",
+        "oauth"
       ],
       "optionalScopes": [
         "crm.schemas.contacts.read"
@@ -19,7 +21,7 @@
       "conditionallyRequiredScopes": []
     },
     "permittedUrls": {
-      "fetch": ["https://api.hubapi.com"],
+      "fetch": ["https://api.hubapi.com", "https://api.helpcenter.io/v1"],
       "iframe": [],
       "img": []
     },

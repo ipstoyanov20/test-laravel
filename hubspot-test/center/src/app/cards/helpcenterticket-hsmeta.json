@@ -1,0 +1,11 @@
+{
+  "uid": "helpcenterticket",
+  "type": "card",
+  "config": {
+    "name": "HelpCenter.io",
+    "description": "Search some articles",
+    "entrypoint": "/app/cards/helpcenterticket.jsx",
+    "location": "helpdesk.sidebar",
+    "objectTypes": ["TICKET"]
+  }
+}

@@ -1,107 +1,29 @@
-import React, { useState } from "react";
-import {
-	Text,
-	Button,
-	LoadingSpinner,
-	Flex,
-	Box,
-	Alert,
-	Heading,
-} from "@hubspot/ui-extensions";
-import { hubspot } from "@hubspot/ui-extensions";
+import { useEffect } from 'react';
+import { hubspot, Text } from '@hubspot/ui-extensions';
 
-hubspot.extend(() => <HelpCenterTicket />);
+hubspot.extend(({ context }) => <Hello context={context} />);
 
-const HelpCenterTicket = () => {
-	const [articles, setArticles] = useState([]);
-	const [message, setMessage] = useState(null);
-	const [error, setError] = useState(null);
-	const [loading, setLoading] = useState(false);
-
-	const fetchArticles = async () => {
-		setLoading(true);
-		setError(null);
-		setMessage(null);
-
-		try {
-			const resp = await fetch(`https://api.helpcenter.io/v1/articles`, {
-				headers: {
-					Accept: "application/json",
-					apikey: "BZLqTTFgwQ0SasnBkT4bK6vVwGbjAYcdloCzqafkYO7qsrrmdyHdKjY18NGXfKe0",
-				},
-			});
-			
-			if (!resp.ok) {
-				const err = await resp.json();
-				throw new Error(err.error || "Unknown error");
-			}
-			
-			const data = await resp.json();
-			console.log(data);
-			setArticles(data.data || []);
-			setMessage(`Fetched ${data.data?.length || 0} articles`);
-		} catch (err) {
-			setError(err.message);
-		} finally {
-			setLoading(false);
+const Hello = ({ context }) => {
+  useEffect(() => {
+    const fetchData = async () => {
+      let url = 'https://api.helpcenter.io/articles'; // replace with your own
+      const response = await hubspot.fetch(url, {
+        timeout: 10,
+        method: 'GET',
+		headers:{
+			Authorization: 'Bearer CiRldTEtMzY4Mi1hNjNlLTRjMzEtOGY0NC1lY2RkMGIyMDE4YjIQwt2BRhjpssYnKhkABeaRgul0aKTsBsPHUSObh8i7sud-XnePSgNldTE'
 		}
-	};
+      });
+      console.log('Server response:', response.status);
+      try {
+        const data = await response.json();
+        console.log(data);
+      } catch (err) {
+        console.error('Failed to parse as json', err);
+      }
+    };
+    fetchData().catch((err) => console.error('Something went wrong', err));
+  }, []);
 
-	const handleCopyLink = (article) => {
-		navigator.clipboard.writeText(article.url || "");
-		setMessage("Link copied");
-	};
-
-	return (
-		<Flex direction="column" gap="medium">
-			<Heading size="sm">HelpCenter Articles</Heading>
-
-			{message && (
-				<Alert title="Success" variant="success">
-					<Text>{message}</Text>
-				</Alert>
-			)}
-
-			{error && (
-				<Alert title="Error" variant="danger">
-					<Text>{error}</Text>
-					<Button onClick={() => setError(null)} variant="secondary" size="sm">
-						Dismiss
-					</Button>
-				</Alert>
-			)}
-
-			<Button onClick={fetchArticles} disabled={loading}>
-				{loading ? <LoadingSpinner /> : "Fetch Articles"}
-			</Button>
-
-			{articles.length === 0 && !loading ? (
-				<Text>No articles found.</Text>
-			) : (
-				<Flex direction="column" gap="small">
-					{articles.map((article) => (
-						<Box
-							key={article.id}
-							style={{
-								padding: "12px",
-								border: "1px solid #e6e6e6",
-								borderRadius: "4px",
-							}}
-						>
-							<Text format={{ fontWeight: "bold" }}>
-								{article.title?.en || `Article ${article.id}`}
-							</Text>
-							<Flex direction="row" gap="small" style={{ marginTop: "8px" }}>
-								<Button size="xs" onClick={() => handleCopyLink(article)}>
-									Copy Link
-								</Button>
-							</Flex>
-						</Box>
-					))}
-				</Flex>
-			)}
-		</Flex>
-	);
+  return <Text>Hello world</Text>;
 };
-
-export default HelpCenterTicket;

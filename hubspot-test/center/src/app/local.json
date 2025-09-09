@@ -1,0 +1,5 @@
+{
+  "proxy": {
+    "https://helpcenter.io": "https://helpcenter-io.test"
+  }
+}

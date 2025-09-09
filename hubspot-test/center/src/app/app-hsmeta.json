@@ -21,7 +21,7 @@
       "conditionallyRequiredScopes": []
     },
     "permittedUrls": {
-      "fetch": ["https://api.hubapi.com", "https://api.helpcenter-io.test"],
+      "fetch": ["https://api.hubapi.com", "https://helpcenter.io"],
       "iframe": [],
       "img": []
     },

@@ -1,5 +1,5 @@
 {
   "proxy": {
-    "https://helpcenter.io": "https://helpcenter-io.test"
+    "https://helpcenter.io": "http://helpcenter-io.test"
   }
 }

@@ -16,9 +16,16 @@ import {
 } from "@hubspot/ui-extensions";
 import { hubspot } from "@hubspot/ui-extensions";
 
-hubspot.extend(({ context, runServerlessFunction }) => (
-	<Extension context={context} runServerlessFunction={runServerlessFunction} />
-));
+hubspot.extend(
+	({ context, runServerlessFunction }) => (
+		<Extension context={context} runServerlessFunction={runServerlessFunction} />
+	),
+	{
+		languageOptions: {
+			react: true
+		}
+	}
+);
 
 const Extension = ({ context, runServerlessFunction }) => {
 	const [contactData, setContactData] = useState(null);
